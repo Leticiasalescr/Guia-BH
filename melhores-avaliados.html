@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melhores Avaliados - Guia BH & Região</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="melhores-page">
+
+<header class="bg-dark text-white py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <h1 class="logo mb-3 mb-md-0">Guia BH & Região</h1>
+    <nav class="nav">
+      <a class="nav-link text-white" href="index.html">Home</a>
+      <a class="nav-link text-white" href="cadastro.html">Cadastrar Local</a>
+      <a class="nav-link text-white active" href="melhores-avaliados.html">Melhores avaliados</a>
+      <a class="nav-link text-white" href="index.html#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="py-5">
+  <div class="container">
+    <!-- Título -->
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold text-white">Melhores Lugares Avaliados</h2>
+      <p class="lead text-white-50">Análise dos lugares mais populares de BH e região</p>
+    </div>
+
+    <!-- Filtro de Categoria -->
+    <div class="row mb-4">
+      <div class="col-md-6 mx-auto">
+        <div class="card shadow">
+          <div class="card-body">
+            <label class="form-label fw-bold">Filtrar por Categoria:</label>
+            <select id="filtro-categoria" class="form-select">
+              <option value="todas">Todas as categorias</option>
+              <option value="bares">Bares</option>
+              <option value="restaurantes">Restaurantes</option>
+              <option value="parques">Parques</option>
+              <option value="cafes">Cafés</option>
+              <option value="pubs">Pubs</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-body">
+            <canvas id="grafico-melhores" style="max-height: 400px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ranking de Cards -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-white mb-4 text-center">Ranking Detalhado</h3>
+        <div id="ranking-cards" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Cards serão inseridos aqui -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensagem de loading -->
+    <div id="loading-message" class="text-center py-5">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+      <p class="text-white mt-3">Carregando dados...</p>
+    </div>
+
+    <!-- Mensagem de erro -->
+    <div id="error-message" class="alert alert-danger d-none" role="alert">
+      <h4>Erro ao carregar dados</h4>
+      <p>Verifique se o JSON Server está rodando: <code>json-server --watch db.json</code></p>
+    </div>
+  </div>
+</main>
+
+<footer id="contato" class="bg-dark text-white py-5 mt-5">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between mb-4">
+    <div class="text-center text-md-start mb-3 mb-md-0">
+      <h4 class="mb-3">Sobre o Guia BH & Região</h4>
+      <p class="mb-2">O Guia BH & Região foi criado para ajudar moradores e turistas a descobrirem os melhores lugares para visitar, comer, se divertir e relaxar em Belo Horizonte e região.</p>
+      <p class="mb-0"><strong>Desenvolvido pela aluna Letícia Sales Fernandes do curso de Análise e Desenvolvimento de Sistemas da instituição PUC Minas</strong></p>
+    </div>
+    <div class="text-center text-md-end">
+      <img src="img/fotominha.jpg" alt="Letícia Sales Fernandes" class="rounded-circle mb-2" style="width:100px; height:100px; object-fit:cover; border:2px solid #fff;">
+      <div>
+        <a href="https://www.instagram.com/leticiaxsf" target="_blank" rel="noopener noreferrer" class="text-white me-2" style="font-size:20px;">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="www.linkedin.com/in/letícia-fernandes01" target="_blank" rel="noopener noreferrer" class="text-white" style="font-size:20px;">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center">
+    <small>Guia BH & Região | LSF </small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="assets/scripts/melhores-avaliados.js"></script>
+</body>
+</html>

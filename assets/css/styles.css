@@ -1,0 +1,266 @@
+* {
+     box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html, body {
+height: 100%;
+}
+
+
+body {
+font-family: arial, helvetica, sans-serif;
+background: #3b5339;
+color: #142014;
+line-height: 1.4;
+}
+
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 16px;
+}
+
+
+.site-header {
+ background: #d6ead2;
+}
+
+.logo {
+font-size: 20px;
+font-weight: bold;
+color: #3b5339;
+}
+
+
+.nav-link {
+color: #333;
+font-size: 15px;
+}
+
+.nav-link:hover {
+text-decoration: underline;
+}
+
+
+.hero {
+padding: 35px 0;
+text-align: center;
+}
+
+.hero h2 {
+font-size: 26px;
+margin-bottom: 5px;
+}
+
+.lead {
+color: #666;
+margin-bottom: 10px;
+}
+
+/* botão de pesquisa */ .search-btn {
+border-radius: 10px;
+}
+
+/* categoria-select */ .category-select {
+ border-radius: 8px;
+}
+
+/* categorias */
+.categories .btn {
+background: #fff;
+border: 1px solid #eee;
+border-radius: 50px;
+padding: 8px 12px;
+transition: transform 0.2s;
+}
+
+.categories .btn:hover {
+transform: translateY(-2px);
+}
+
+/* seção de lugares */
+.places-section h3 {
+margin-bottom: 10px;
+color: #142014;
+text-align: center;
+}
+
+/* cardzinhos */
+.card {
+background: #d9ddd4;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 6px 20px rgba(12,12,12,0.05);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+transform: translateY(-6px);
+box-shadow: 0 12px 32px rgba(12,12,12,0.08);
+}
+
+.card-img-top {
+height: 180px;
+object-fit: cover;
+}
+
+.card-title {
+font-size: 17px;
+margin-bottom: 5px;
+}
+
+.card-text {
+color: #666;
+font-size: 15px;
+}
+
+.badge {
+font-size: 13px;
+color: #fff;
+background: #3b5339;
+padding: 3px 6px;
+border-radius: 5px;
+}
+
+.btn-primary {
+color: #3b5339;
+font-weight: bold;
+border-radius: 8px;
+background-color: transparent;
+border: none;
+}
+
+.btn-primary:hover {
+background: rgba(211,84,0,0.06);
+}
+
+.site-footer {
+border-top: 1px solid #eee;
+background: #d6ead2;
+padding: 16px 0;
+margin-top: 20px;
+text-align: center;
+color: #666;
+font-size: 14px;
+}
+
+/* === seção principal === */
+.home-carousel-section {
+  width: 100%;
+  background-color: #011a0a;
+  overflow: hidden;
+}
+
+/* === container === */
+.carousel-container {
+  position: relative;
+  max-width: 1400px;
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(85%);
+  transition: transform 1.8s ease, filter 0.8s ease;
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.05);
+  filter: brightness(100%);
+}
+
+/* === legenda === */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 30px;
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+  color: #fff;
+}
+
+.carousel-caption h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* === controles === */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 28px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.prev { left: 25px; }
+.next { right: 25px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* === animação === */
+.fade {
+  animation: fadeeffect 1.2s ease-in-out;
+}
+@keyframes fadeeffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* === responsividade === */
+@media (max-width: 992px) {
+  .carousel-container { height: 400px; }
+  .carousel-caption h1 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .carousel-container { height: 300px; }
+  .carousel-caption { padding: 30px 15px; }
+  .carousel-caption h1 { font-size: 1.5rem; }
+  .carousel-caption p { font-size: 1rem; }
+  .prev, .next { font-size: 22px; padding: 8px 10px; }
+}
+
+.desc-detalhes {
+    color: #24441d !important;
+}
